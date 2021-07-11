@@ -19,47 +19,48 @@ import com.produtos.apirest.repository.ProdutoRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@RestController // classe que recebe requisicoes http
+@RestController // Classe que recebe requisições http
 @RequestMapping(value = "/api")
 @Api(value = "API REST Produtos")
-@CrossOrigin(origins = "*") //defino qual aplicação pode acessaros métodos(*usado para todos)
+@CrossOrigin(origins = "*") // Defino qual aplicação pode acessar os métodos(*usado para todos)
 public class ProdutoResource {
 
 	@Autowired
 	ProdutoRepository produtoRepository;
 
-	// Lista dados salvos no banco de dados
 	@GetMapping("/produtos")
-	@ApiOperation(value = "Lista dados salvos no banco de dados")
-	public List<Produto> listaProdutos() {
+	@ApiOperation(value = "Lista todos os dados salvos no banco de dados")
+	public List<Produto> getAll() {
 		return produtoRepository.findAll();
 	}
 
-	// Lista um dado salvo no banco de dados apartir do id
-	@GetMapping("/produto/{id}")
+	@GetMapping("/produto/search/id/{id}")
 	@ApiOperation(value = "Lista um dado salvo no banco de dados apartir do id")
-	public Produto listaProdutoUnico(@PathVariable(value = "id") long id) {
+	public Produto getById(@PathVariable(value = "id") long id) {
 		return produtoRepository.findById(id);
 	}
 
-	// Adiciona um produto no banco de dados
-	@PostMapping("/produto")
+	@GetMapping("/produto/search/codigobarras/{codigoBarras}")
+	@ApiOperation(value = "Lista um dado salvo no banco de dados apartir do código de barras")
+	public Produto getByCb(@PathVariable(value = "codigoBarras") String codigoBarras) {
+		return produtoRepository.findByCodigoBarras(codigoBarras);
+	}
+
+	@PostMapping("/produto/save")
 	@ApiOperation(value = "Adiciona um produto no banco de dados")
-	public Produto salvarProduto(@RequestBody Produto produto) {
+	public Produto save(@RequestBody Produto produto) {
 		return produtoRepository.save(produto);
 	}
 
-	// Deleta um produto no banco de dados
-	@DeleteMapping("/produto")
+	@DeleteMapping("/produto/delete")
 	@ApiOperation(value = "Deleta um produto no banco de dados")
-	public void deletarProduto(@RequestBody Produto produto) {
+	public void delete(@RequestBody Produto produto) {
 		produtoRepository.delete(produto);
 	}
 
-	// Atualizar um produto no banco de dados
-	@PutMapping("/produto")
-	@ApiOperation(value = "Atualizar um produto no banco de dados")
-	public Produto atualizarProduto(@RequestBody Produto produto) {
+	@PutMapping("/produto/update")
+	@ApiOperation(value = "Atualiza um produto no banco de dados")
+	public Produto update(@RequestBody Produto produto) {
 		return produtoRepository.save(produto);
 	}
 
