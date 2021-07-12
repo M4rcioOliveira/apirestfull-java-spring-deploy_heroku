@@ -15,11 +15,15 @@ Esse "pequeno" projeto, consistem em uma API REST CRUD com Spring Boot, PostGree
 
 
  O projeto está disponível na plataforma heroku e pode ser acessado por este endereço: https://aw-apirestfull-produto-estoque.herokuapp.com/swagger-ui.html 
+ 
+ FIQUE A VONTADE PARA TESTAR, MODIFICAR E REPRODUZIR O PROJETO!!!
 
 
 # Aplicativo
 
 O download pode ser feito nesse endereço: https://drive.google.com/file/d/1_lejehxL149lgyYxiiWkhxKlkl5NqGnS/view?usp=sharing
+
+
 O código fonte está disponível nesse endereço: https://gallery.appinventor.mit.edu/?galleryid=8773efab-e9e9-44bb-8995-e7df146fdeb5
 
  
