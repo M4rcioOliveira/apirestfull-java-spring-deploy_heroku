@@ -30,6 +30,6 @@ O código fonte está disponível nesse endereço: https://gallery.appinventor.m
 
 ## DEMONSTRAÇÃO 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iTZhvIEeTNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+A demonstração desse projeto pode ser vista em vídeo no YouTube por meio desse endereço: https://www.youtube.com/watch?v=iTZhvIEeTNE&ab_channel=MarcioCostadeOliveira
 
 
